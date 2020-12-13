@@ -31,4 +31,11 @@ class TestDataController {
             TestData::class.java
         )
     }
+
+    @PostMapping("/polymorphic")
+    fun polymorphic(@RequestBody data: InheritanceData): InheritanceData {
+        return data.copy(
+            extra = data.extra + 100
+        )
+    }
 }
